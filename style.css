@@ -40,6 +40,15 @@ body{
 .avatar{flex:0 0 120px; width:120px; height:120px; border-radius:16px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--accent1),var(--accent2)); box-shadow: 0 6px 18px rgba(4,8,20,0.6);}
 .avatar svg{width:100%; height:100%; display:block; filter:drop-shadow(0 6px 18px rgba(0,0,0,0.5));}
 
+/* profile image sizing: make local image fill the avatar box cleanly */
+.avatar img,.avatar-img{
+  width:100%;
+  height:100%;
+  object-fit:cover; /* crop/cover to preserve aspect and avoid distortion */
+  display:block;
+  border-radius:inherit; /* match the container rounding */
+}
+
 .profile-info{flex:1}
 .name{margin:0 0 6px 0; font-size:1.6rem; letter-spacing:0.4px}
 .bio{margin:0 0 12px 0; color:var(--muted); max-width:70ch}
